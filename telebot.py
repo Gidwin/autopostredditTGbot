@@ -10,10 +10,7 @@ from aiogram import Bot, types
 from aiogram.utils import exceptions
 from aiogram.dispatcher import Dispatcher
 from aiogram.types import InputFile
-from google_fonts import download
 
-
-download("arial", variants=["regular"])
 
 
 API_TOKEN = config.settings['TOKEN']
@@ -45,7 +42,7 @@ async def send_photo(channel_id: int, title: str, photo: bytes):
 
     try:
         draw = ImageDraw.Draw(image)
-        font = ImageFont.truetype("./Arial.ttf", 32)
+        font = ImageFont.truetype("arial.ttf", 32)
         text = "t.me/memesreddits"
         textwidth, textheight = draw.textsize(text, font)
         x = image.width - textwidth - 10
